@@ -1,0 +1,65 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jan 23 23:16:59 2021
+
+@author: user
+"""
+
+import pandas as pd
+from time import sleep
+
+path = 'C:/Users/user/Desktop/wafer'
+
+
+file1 = path + '/wafer1.xlsx'
+
+file2 = 'C:/Users/user/Desktop/wafer/wafer2.xlsx'
+file3 = 'C:/Users/user/Desktop/wafer/wafer3.xlsx'
+#file4= 'C:/Users/user/Desktop/wafer/wafer4.xlsx'
+file5 = 'C:/Users/user/Desktop/wafer/wafer5.xlsx'
+file6 = 'C:/Users/user/Desktop/wafer/wafer6.xlsx'
+file6 = 'C:/Users/user/Desktop/wafer/wafer6.xlsx'
+file6 = 'C:/Users/user/Desktop/wafer/wafer6.xlsx'
+file7 = 'C:/Users/user/Desktop/wafer/wafer7.xlsx'
+file8 = 'C:/Users/user/Desktop/wafer/wafer8.xlsx'
+file9 = 'C:/Users/user/Desktop/wafer/wafer9.xlsx'
+file10 = 'C:/Users/user/Desktop/wafer/wafer10.xlsx'
+file11 = 'C:/Users/user/Desktop/wafer/wafer11.xlsx'
+file12 = 'C:/Users/user/Desktop/wafer/wafer12.xlsx'
+file13 = 'C:/Users/user/Desktop/wafer/wafer13.xlsx'
+file14 = 'C:/Users/user/Desktop/wafer/wafer14.xlsx'
+file15 = 'C:/Users/user/Desktop/wafer/wafer15.xlsx'
+file16 = 'C:/Users/user/Desktop/wafer/wafer16.xlsx'
+file17 = 'C:/Users/user/Desktop/wafer/wafer17.xlsx'
+file18 = 'C:/Users/user/Desktop/wafer/wafer18.xlsx'
+file19 = 'C:/Users/user/Desktop/wafer/wafer19.xlsx'
+file20 = 'C:/Users/user/Desktop/wafer/wafer20.xlsx'
+file21 = 'C:/Users/user/Desktop/wafer/wafer21.xlsx'
+file22 = 'C:/Users/user/Desktop/wafer/wafer22.xlsx'
+file23 = 'C:/Users/user/Desktop/wafer/wafer23.xlsx'
+file24 = 'C:/Users/user/Desktop/wafer/wafer24.xlsx'
+file25 = 'C:/Users/user/Desktop/wafer/wafer25.xlsx'
+
+file = [file1, file2, file3,file5,file6 ,file7,file8,file9,file10,file11,file12,file13,file14,file15
+        ,file16,file17,file18,file19,file20,file21,file22,file23,file24,file25]
+li = []
+for i in file:
+    li.append(pd.read_excel(i))
+writer = pd.ExcelWriter('C:/Users/user/Desktop/merage_wafer1_3.xlsx')
+pd.concat(li).to_excel(writer, 'Sheet1', index=False)
+
+writer.save()
+sleep(0.5)
+
+def xlsx_to_csv_pd():
+ data_xls = pd.read_excel('C:/Users/user/Desktop/merage_wafer1_3.xlsx',
+                             index_col=0)
+ data_xls.to_csv('C:/Users/user/Desktop/merage_wafer1_25.csv',encoding='utf-8')
+ #if __name__ == '__main__':
+xlsx_to_csv_pd()
+    
+dataset =pd.read_csv('C:/Users/user/Desktop/merage_wafer1_25.csv')
+print(dataset)
+
+
+
